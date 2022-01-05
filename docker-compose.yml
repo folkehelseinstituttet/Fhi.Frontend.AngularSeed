@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  angular-app:
+    build:
+      context: ./${PROJECT_FOLDER}
+      args:
+        PROJECT_FOLDER: ${PROJECT_FOLDER}
+    image: ${PROJECT_FOLDER}/angular-app
+    container_name: ${PROJECT_FOLDER}
+    ports:
+      - 4200:4200
+    volumes:
+      - ./${PROJECT_FOLDER}/:/home/angular/${PROJECT_FOLDER}
+      - /home/angular/${PROJECT_FOLDER}/node_modules

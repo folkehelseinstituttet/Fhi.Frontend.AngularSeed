@@ -9,19 +9,24 @@ ARG PROJECT_FOLDER
 ARG SEED_TYPE
 ENV ANGULAR=/home/angular
 
-COPY Dockerfile $ANGULAR/$PROJECT_FOLDER/Dockerfile
-RUN chown -R app:app $ANGULAR/*
+WORKDIR $ANGULAR
 
+RUN mkdir $PROJECT_FOLDER && chown -R app:app $ANGULAR/*
 USER app
 
-WORKDIR $ANGULAR
-RUN ng new $PROJECT_NAME --directory=$PROJECT_FOLDER --routing --style=scss --skip-install --skipGit &&\
-    rm $PROJECT_FOLDER/src/favicon.ico &&\
-    rm $PROJECT_FOLDER/src/assets/.gitkeep &&\
-    rm $PROJECT_FOLDER/src/app/app.component.scss &&\
-    rm $PROJECT_FOLDER/src/app/app.component.spec.ts
+RUN ng new $PROJECT_NAME --directory=$PROJECT_FOLDER --routing --style=scss --skip-install --skip-git
 
 WORKDIR $ANGULAR/$PROJECT_FOLDER
+
+RUN rm ./src/favicon.ico &&\
+    rm ./src/assets/.gitkeep &&\
+    rm ./src/app/app.component.scss &&\
+    rm ./src/app/app.component.spec.ts
+
+COPY angular-seed-$SEED_TYPE/src ./src/
+COPY .editorconfig ./
+COPY Dockerfile ./
+
 RUN npm install bootstrap@5.1.3 --save-exact --package-lock-only &&\
     npm install @fortawesome/angular-fontawesome@0.10.0 --save-exact --package-lock-only &&\
     npm install @fortawesome/fontawesome-svg-core@1.2.36 --save-exact --package-lock-only &&\
@@ -31,5 +36,7 @@ RUN npm install bootstrap@5.1.3 --save-exact --package-lock-only &&\
     npm install what-input@5.2.10 --save-exact --package-lock-only &&\
     npm install @folkehelseinstituttet/style@3.2.2 --save-exact --package-lock-only
 
-COPY .editorconfig ./
-COPY angular-seed-$SEED_TYPE/src ./src/
+# angular-seed-2
+
+RUN npm install @ng-bootstrap/ng-bootstrap@11.0.0 --save-exact --package-lock-only &&\
+    npm install @angular/localize@13.1.1 --save-exact --package-lock-only

@@ -9,8 +9,8 @@ ENV ANGULAR=/home/angular
 
 COPY package.json $ANGULAR/$PROJECT_FOLDER/
 RUN chown -R app:app $ANGULAR/*
-
 USER app
+
 WORKDIR $ANGULAR/$PROJECT_FOLDER
 RUN npm install
 

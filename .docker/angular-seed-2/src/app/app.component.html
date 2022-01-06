@@ -5,13 +5,11 @@
       <div class="container fhi-app__brand-container">
         <div class="fhi-app__brand-content">
           <a class="fhi-app__logo" routerLink="/">
-            <img src="./assets/fhi-logo.svg" alt="FHI-logo">
+            <img src="./assets/logos/fhi-logo-black.svg" alt="FHI-logo">
           </a>
           <div class="fhi-app__project">
             <span class="fhi-app__project-name">{{ projectName }}</span>
-            <span class="fhi-app__project-description">
-              &nbsp;&ndash;&nbsp;{{ projectDescription }}
-            </span>
+            <span class="fhi-app__project-description">&nbsp;&ndash; {{ projectDescription }}</span>
           </div>
         </div>
       </div>
@@ -19,14 +17,14 @@
 
     <div class="fhi-app__main-menu">
       <div class="container fhi-app__main-menu-container">
-        <!-- main menu component -->
+        <app-main-menu [projectName]="projectName"></app-main-menu>
       </div>
     </div>
 
   </header>
 
   <main class="fhi-app__main-content">
-    <!-- component or router-outlet -->
+    <router-outlet></router-outlet>
   </main>
 
 </div>

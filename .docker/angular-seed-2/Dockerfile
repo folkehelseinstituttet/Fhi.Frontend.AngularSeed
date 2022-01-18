@@ -39,4 +39,4 @@ RUN npm install bootstrap@5.1.3 --save-exact --package-lock-only &&\
 # angular-seed-2
 
 RUN npm install @ng-bootstrap/ng-bootstrap@11.0.0 --save-exact --package-lock-only &&\
-    npm install @angular/localize@13.1.1 --save-exact --package-lock-only
+    npm install @angular/localize@13.1.2 --save-exact --package-lock-only

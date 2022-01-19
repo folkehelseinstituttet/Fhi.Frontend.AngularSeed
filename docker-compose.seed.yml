@@ -1,10 +1,10 @@
-version: "3"
+version: "3.5"
 
 services:
   angular-seed:
     build:
       context: ./.docker
-      dockerfile: angular-seed-${SEED_TYPE}/Dockerfile
+      target: angular-seed-${SEED_TYPE}
       args:
         PROJECT_NAME: ${PROJECT_NAME}
         PROJECT_FOLDER: ${PROJECT_FOLDER}

@@ -1,9 +1,10 @@
-version: "3"
+version: "3.5"
 
 services:
   angular-app:
     build:
       context: ./${PROJECT_FOLDER}
+      target: angular-app
       args:
         PROJECT_FOLDER: ${PROJECT_FOLDER}
     image: ${PROJECT_FOLDER}/angular-app

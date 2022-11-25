@@ -7,8 +7,6 @@ import localeNb from '@angular/common/locales/nb';
 import localeNbExtra from '@angular/common/locales/extra/nb';
 registerLocaleData(localeNb, 'nb', localeNbExtra);
 
-import 'what-input';
-
 import { SharedModule } from '../shared/shared.module';
 
 import { MainMenuComponent } from './main-menu/main-menu.component';

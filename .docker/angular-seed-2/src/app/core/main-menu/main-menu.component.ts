@@ -1,6 +1,4 @@
 import { Component, Input } from '@angular/core';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
-import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 import { MainMenuItem } from './main-menu-item.model';
 
@@ -12,13 +10,11 @@ export class MainMenuComponent {
 
   @Input() projectName: string = '';
 
-  faBars = faBars;
-  faTimes = faTimes;
   mainMenuIsOpen = false;
 
   mainMenuItems: MainMenuItem[] = [{
     name: 'Demo-feature',
-    routerLink: `/demo-feature`
+    link: `/demo-feature`
   }];
 
   mainMenuClose(): void {

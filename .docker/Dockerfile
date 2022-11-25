@@ -1,7 +1,7 @@
-FROM node:16.13.1 as angular-cli
+FROM node:16.18.1 as angular-cli
 
-RUN npm install --global npm@8.3.0 --save-exact &&\
-    npm install --global @angular/cli@13.1.2 --save-exact &&\
+RUN npm install --global npm@8.19.2 --save-exact &&\
+    npm install --global @angular/cli@14.2.10 --save-exact &&\
     useradd --user-group --create-home --shell /bin/false app
 
 ARG PROJECT_FOLDER
@@ -31,19 +31,17 @@ COPY angular-seed-$SEED_TYPE/src ./src/
 COPY .editorconfig ./
 COPY Dockerfile ./
 
-RUN npm install bootstrap@5.1.3 --save-exact --package-lock-only &&\
-    npm install @fortawesome/angular-fontawesome@0.10.0 --save-exact --package-lock-only &&\
-    npm install @fortawesome/fontawesome-svg-core@1.2.36 --save-exact --package-lock-only &&\
-    npm install @fortawesome/free-solid-svg-icons@5.15.4 --save-exact --package-lock-only &&\
-    npm install @types/lodash-es@4.17.5 --save-exact --package-lock-only &&\
-    npm install lodash-es@4.17.21 --save-exact --package-lock-only &&\
-    npm install what-input@5.2.10 --save-exact --package-lock-only &&\
-    npm install @folkehelseinstituttet/style@3.2.2 --save-exact --package-lock-only
+RUN npm install bootstrap@5.2.0 --save-exact --package-lock-only &&\
+    npm install @folkehelseinstituttet/style@3.11.0 --save-exact --package-lock-only &&\
+    npm install @types/lodash-es@4.17.6 --save-exact --package-lock-only &&\
+    npm install lodash-es@4.17.21 --save-exact --package-lock-only
 
 FROM angular-seed-1 as angular-seed-2
 
-RUN npm install @ng-bootstrap/ng-bootstrap@11.0.0 --save-exact --package-lock-only &&\
-    npm install @angular/localize@13.1.2 --save-exact --package-lock-only
+RUN npm install @angular/localize@14.2.12 --save-exact --package-lock-only &&\
+    npm install @ng-bootstrap/ng-bootstrap@13.1.1 --save-exact --package-lock-only &&\
+    npm install @popperjs/core@^2.11.5 --save-exact --package-lock-only &&\
+    npm install @ng-select/ng-select@9.0.2 --save-exact --package-lock-only
 
 
 FROM angular-cli as angular-app

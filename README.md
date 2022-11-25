@@ -38,6 +38,6 @@ Use Docker to create a new FHI Angular client with dependencies included (CSS, i
 3. Build docker image and start container  
   `docker-compose up`
 
-## Optional: jettison Docker
+## Optional: stop using Docker
 
 If you don't want to use Docker in your project, delete the file `./docker-compose.yml` and run `npm install`

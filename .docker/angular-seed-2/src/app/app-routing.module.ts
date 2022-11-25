@@ -7,7 +7,7 @@ const routes: Routes = [{
   redirectTo: 'demo-feature'
 }, {
   path: 'demo-feature',
-  loadChildren: () => import('./demo-feature/demo-feature.module').then(m => m.DemoFeatureModule)
+  loadChildren: () => import('./views/demo-feature/demo-feature.module').then(m => m.DemoFeatureModule)
 }, {
   path: '**',
   redirectTo: 'demo-feature'

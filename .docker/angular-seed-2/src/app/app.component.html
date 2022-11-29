@@ -1,0 +1,66 @@
+<div class="fhi-app" id="top">
+  <header class="fhi-header">
+    <div class="fhi-header__brand">
+      <div class="container fhi-header__brand-container">
+        <div class="fhi-header__brand-content">
+          <a class="fhi-header__logo" routerLink="/">
+            <i class="icon-fhi-logo fhi-header__logo-icon"></i>
+          </a>
+          <div class="fhi-header__project">
+            <span class="fhi-header__project-name">{{ projectName }}</span>
+            <span class="fhi-header__project-description" *ngIf="projectDescription">
+              &nbsp;&ndash;&nbsp;{{ projectDescription }}
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="fhi-header__main-menu">
+      <div class="container fhi-header__main-menu-container">
+        <app-main-menu [projectName]="projectName"></app-main-menu>
+      </div>
+    </div>
+
+  </header>
+
+  <main class="fhi-app__main-content">
+    <router-outlet></router-outlet>
+  </main>
+
+  <footer class="fhi-footer fhi-footer--arch">
+    <div class="container fhi-footer__container">
+      <div class="row">
+        <div class="col-12 mb-2">
+          <h2 class="h3">Overskrift om nødvendig</h2>
+        </div>
+
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <a href="javascript:void(0)" class="btn fhi-btn-shortcut-link">
+            <i class="icon-arrow-right icon-white"></i>
+            <span class="btn__text">Snarvei 1</span>
+          </a>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <a href="javascript:void(0)" class="btn fhi-btn-shortcut-link">
+            <i class="icon-arrow-right icon-white"></i>
+            <span class="btn__text">Snarvei 2</span>
+          </a>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <a href="javascript:void(0)" class="btn fhi-btn-shortcut-link">
+            <i class="icon-arrow-right icon-white"></i>
+            <span class="btn__text">Snarvei 3</span>
+          </a>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <a href="javascript:void(0)" class="btn fhi-btn-shortcut-link">
+            <i class="icon-arrow-right icon-white"></i>
+            <span class="btn__text">Snarvei 4</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</div>

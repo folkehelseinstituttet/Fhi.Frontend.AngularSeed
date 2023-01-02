@@ -41,3 +41,52 @@ Use Docker to create a new FHI Angular client with dependencies included (CSS, i
 ## Optional: stop using Docker
 
 If you don't want to use Docker in your project, delete the file `./docker-compose.yml` and run `npm install`
+
+---
+
+## Coding style guide
+
+When the new app is ready and the real job writing frontend code for the new product begins, we recommend using [Angular coding style guide](https://angular.io/guide/styleguide).
+
+### Folder and file structure
+
+[https://angular.io/guide/styleguide#overall-structural-guidelines](https://angular.io/guide/styleguide#overall-structural-guidelines)
+
+```sh
+src/
+   app/
+      core/
+         services/
+      shared/
+         shared.module.ts
+      views/
+         forsiden/
+            forsiden.module.ts
+         login/
+            login.module.ts
+         shared/
+            services/
+```
+
+#### The Core module
+
+To keep the app module light, use the core module for components and other resources that are used once in an Angular application.
+
+#### The Shared module
+
+The shared module is made up of components and other resources that is reused in all other modules.
+> OBS! Only the top level shared folder contains a shared module.
+
+#### Folders named shared
+
+Multiple shared folders at different levels in the folder structure are allowed. The shared resources in any shared folder should only be imported in other files at the same level or deeper. In other words; place all shared folders as deep as possible in the file structure.
+
+#### Lazy loaded features
+
+A folder named `views` (this is a custom naming convention) contains all of the [lazy loaded folders](https://angular.io/guide/styleguide#lazy-loaded-folders).
+Each lazy loaded folder (or feature) contains a routing component, its child components, and their related assets and modules.
+The `views`-folder also contain a `shared`-folder for resources used by all lazy loaded features.
+
+### Typescript aliases for better import statements
+
+We use typescript aliases to create better import statements in the application. Easier to read, easier to move files and folders.

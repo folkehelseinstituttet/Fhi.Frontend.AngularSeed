@@ -56,7 +56,6 @@ When the new app is ready and the real job writing frontend code for the new pro
 src/
    app/
       core/
-         services/
       shared/
          shared.module.ts
       views/
@@ -75,9 +74,9 @@ To keep the app module light, use the core module for components and other resou
 #### The Shared module
 
 The shared module is made up of components and other resources that is reused in all other modules.
-> OBS! Only the top level shared folder contains a shared module.
+> NB! Only the top level shared folder contains a shared module.
 
-#### Folders named shared
+#### Folders named "shared"
 
 Multiple shared folders at different levels in the folder structure are allowed. The shared resources in any shared folder should only be imported in other files at the same level or deeper. In other words; place all shared folders as deep as possible in the file structure.
 
